@@ -1,16 +1,19 @@
-import express from "express"
-var app = express();
-import { StudentController } from "./controller/student.mjs";
+import express from 'express';
+const app = express();
 
+app.get('/', (req, res) => {
+    res.send('Choo Choo! Welcome to your Express app 🚅');
+})
 
-app.get("/student", StudentController.getAllStudent);
-app.get("/", (req, res, next) => {
-    res.json(["alfian","alamsyah"]);
-});
+app.get("/json", (req, res) => {
+    res.json({"Choo Choo": "Welcome to your Express app 🚅"});
+})
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-   });
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+})
 
 
 
