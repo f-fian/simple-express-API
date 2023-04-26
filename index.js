@@ -11,10 +11,11 @@ app.get("/json", (req, res) => {
     res.json({"Choo Choo": "Welcome to your Express app 🚅"});
 })
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
     console.log(`Example app listening on port 3000`)
+    console.log(process.env.PORT);
 })
 
 
