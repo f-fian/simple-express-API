@@ -1,4 +1,4 @@
-import express  from "express";
+import express from "express"
 var app = express();
 import { StudentController } from "./controller/student.mjs";
 
